@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Zidan | My Digital World</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --neon: #00f5ff;
+      --bg: #080b14;
+      --card: #111827;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Latar belakang */
+    .glow {
+      position: fixed;
+      width: 260px;
+      height: 260px;
+      background: var(--neon);
+      opacity: 0.12;
+      filter: blur(100px);
+      border-radius: 50%;
+      top: 100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      color: var(--neon);
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .status {
+      font-size: 12px;
+      color: #8dffb0;
+      border: 1px solid #286947;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 65px 7% 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .label {
+      color: var(--neon);
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 12vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--neon);
+      text-shadow: 0 0 25px var(--neon);
+    }
+
+    .desc {
+      color: #aab4c8;
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    button, .link {
+      padding: 13px 18px;
+      border-radius: 9px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    button {
+      border: none;
+      background: var(--neon);
+      color: #061016;
+      font-weight: bold;
+    }
+
+    button:hover, .link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px var(--neon);
+    }
+
+    .link {
+      border: 1px solid #374151;
+      color: white;
+      background: transparent;
+    }
+
+    .clock-card {
+      margin-top: 55px;
+      padding: 25px;
+      border: 1px solid #263447;
+      background: linear-gradient(
+        135deg, #111827, #0b1020
+      );
+      border-radius: 18px;
+      box-shadow: 0 0 30px #00f5ff0a;
+    }
+
+    .small-title {
+      color: #8c9bb3;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    #clock {
+      color: var(--neon);
+      font-size: clamp(35px, 9vw, 52px);
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    #date {
+      color: #b0bbcf;
+      font-size: 14px;
+    }
+
+    .section-title {
+      margin: 45px 0 18px;
+      font-size: 23px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #253044;
+      border-radius: 14px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--neon);
+      transform: translateY(-4px);
+    }
+
+    .emoji {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 16px;
+    }
+
+    .card p {
+      color: #9caac0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #69758b;
+      font-size: 12px;
+    }
+
+    @media (max-width: 420px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      main {
+        padding: 55px 5% 30px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow"></div>
+
+  <header>
+    <div class="logo">ZIDAN.</div>
+    <div class="status">● DIGITAL WORLD</div>
+  </header>
+
+  <main>
+    <p class="label">WELCOME TO MY WORLD</p>
+
+    <h1>Hi, I'm<br><span>Zidan.</span></h1>
+
+    <p class="desc">
+      Selamat datang di dunia digital gua.
+      Tempat ide, kreativitas, teknologi, dan
+      masa depan bertemu.
+    </p>
+
+    <div class="buttons">
+      <a class="link" href="#tentang">Jelajahi Website ↓</a>
+      <button onclick="gantiWarna()">
+        Ganti Warna ✨
+      </button>
+    </div>
+
+    <div class="clock-card">
+      <p class="small-title">LOCAL DIGITAL CLOCK</p>
+      <div id="clock">00:00:00</div>
+      <p id="date">Memuat tanggal...</p>
+    </div>
+
+    <h2 class="section-title" id="tentang">
+      Tentang Website Ini
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">💻</div>
+        <h3>Coding</h3>
+        <p>Belajar membuat sesuatu dari barisan kode.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🤖</div>
+        <h3>Artificial Intelligence</h3>
+        <p>Mengeksplorasi teknologi dan kecerdasan buatan.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🚀</div>
+        <h3>Future Goals</h3>
+        <p>Membangun ide kecil menjadi proyek nyata.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🎨</div>
+        <h3>Creativity</h3>
+        <p>Mengubah imajinasi menjadi karya digital.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Zidan. Built with curiosity.
+  </footer>
+
+  <script>
+    // Jam dan tanggal otomatis
+    function updateClock() {
+      const sekarang = new Date();
+
+      document.getElementById("clock")
+        .textContent = sekarang.toLocaleTimeString("id-ID", {
+          hour12: false
+        });
+
+      document.getElementById("date")
+        .textContent = sekarang.toLocaleDateString("id-ID", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+
+      document.getElementById("year")
+        .textContent = sekarang.getFullYear();
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Ganti tema neon
+    const warna = [
+      "#00f5ff",
+      "#b14cff",
+      "#ff3cac",
+      "#39ff88",
+      "#ffbd39"
+    ];
+
+    let indeks = 0;
+
+    function gantiWarna() {
+      indeks = (indeks + 1) % warna.length;
+
+      document.documentElement.style
+        .setProperty("--neon", warna[indeks]);
+    }
+  </script>
+</body>
+</html>
